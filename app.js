@@ -4,7 +4,16 @@ var express					= require("express"),
 	mongoose				= require("mongoose"),
 	flash					= require("connect-flash"),
 	expressSanitizer		= require("express-sanitizer"),
-	bodyParser				= require("body-parser");
+    bodyParser				= require("body-parser");
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////
+ // Environment Variable //
+//////////////////////////
+
+var PORT                    = process.env.PORT,
+    DB                      = process.env.DB;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -16,7 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
-// mongoose.connect("mongodb://localhost/tezzpolicy", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/tezzpolicy", {useMongoClient: true});
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 // app.use(flash());
@@ -53,10 +62,17 @@ app.use(methodOverride("_method"));
 ////////////
 
 
-app.get("/",function(req,res){
+app.get("/",(req,res)=>{
     res.render('home');
 });
 
+app.get('/about',(req,res)=>{
+    res.render('about');
+});
+
+app.get('/contact',(req,res)=>{
+    res.render('contact');
+})
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +80,6 @@ app.get("/",function(req,res){
  // Listener //
 //////////////
 
-app.listen(7263, function() {
-	console.log("SERVER 7263 ONLINE");
+app.listen(PORT, function() {
+	console.log("SERVER ONLINE");
 });
