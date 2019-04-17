@@ -1,8 +1,8 @@
 <% include partials/header %>
 
     <div class="clear"></div>
-    <div id="page-content">
-        <section class="breadcrumb">
+    <div id="page-content" class='tpcpc'>
+        <section class="breadcrumb tpccs">
             <div class="container">
                 <h2>Contact Us</h2>
                 <ul>
@@ -15,28 +15,46 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <div class="form-box">
-                            <h2>Get in Touch</h2>
-                            <div class="form-content">
+                        <div class="get-quote-form">
+                        <h2>Get a free quote form</h2>
+                        <form id="get-quote" action='/send-email' method='post'>
+                            <div>
                                 <input type="text" name="name" placeholder="Your Name" />
-                                <input type="text" name="email" placeholder="Email" />
-                                <input type="text" name="subject" placeholder="Subject" />
-                                <textarea rows="1" cols="1" name="message" placeholder="Message"></textarea>
-                                <div class="text-center">
-                                    <input type="submit" class="btn-default" value="Submit" />
-                                </div>
                             </div>
+                            <div>
+                                <input type="text" name="email" placeholder="Email" />
+                            </div>
+                            <div>
+                                <input type="text" name="phone" placeholder="Phone no" />
+                            </div>
+                            <div class="form-select">
+                                <span></span>
+                                <select name='policytype'>
+                                    <option value='health'>Health Insurance</option>
+                                    <option value='life'>Life Insurance</option>
+                                    <option value='vehicle'>Vehicle Insurance</option>
+                                    <option value='travel'>Travel Insurance</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea rows="1" cols="1" placeholder="Message" name='message'></textarea>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn-default"/>
+                            </div>
+                        </form>
                         </div>
-                        <div class="contact-info">
+                        <%# <div class="contact-info">
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="contact-address">
                                         <h3>Address</h3>
                                         <div>
                                             <i class="icon ti-home"></i>
-                                            <p>E104 Dharti -2 , Nr Silverstar Mall
-                                                <br/>Chandlodia - Ahmedabad
-                                                <br/>Zip - 382481</p>
+                                            <p>633/A-21,
+                                                <br/>Gulzar Colony, Chinhat
+                                                <br/>Lucknow - Uttar Pradesh
+                                                <br/>Zip - 226016</p>
                                             <p class="social">
                                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -63,9 +81,9 @@
                                 </div>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
-                        <div class="contact-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.52897217585!2d72.43965449510691!3d23.02060002135479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1474053074398" width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div> %>
+                        <div class="contact-map tpms">
+                            <iframe src="https://maps.google.com/maps?q=gulzar%20colony%2Cchinhat%2Clucknow&t=k&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

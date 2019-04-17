@@ -10,8 +10,8 @@
                         <div class="slide-con">
                             <b>Vehiclecare</b>
                             <h3>Vehicle Insurance</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            <p>We provide optimum coverage insurance plans which are also cost-effective for your two wheeler, commercial vehicles, along with private cars.</p>
+                            <%# <a href="#" class="ti-arrow-right"></a> %>
                         </div>
                     </div>
                 </li>
@@ -21,8 +21,8 @@
                         <div class="slide-con">
                             <b>Healthcare</b>
                             <h3>Health Insurance</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            <p>Our health insurance policy is a scheme which helps in providing our customer with financial cover under medical costs for an individual or your whole family.</p>
+                            <%# <a href="#" class="ti-arrow-right"></a> %>
                         </div>
                     </div>
                 </li>
@@ -32,8 +32,8 @@
                         <div class="slide-con">
                             <b>Healthcare</b>
                             <h3>Travel Insurance</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            <p>Travel insurance policies are designed providing financial support in tragic event of loss of luggage, passport or any other vital belongings while travelling.</p>
+                            <%# <a href="#" class="ti-arrow-right"></a> %>
                         </div>
                     </div>
                 </li>
@@ -44,22 +44,22 @@
                 <section class="col-sm-7 col-md-8 col-lg-8">
                     <div class="intro">
                         <h2>Welcome to Tezz Policy</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci nisi, porta sed diam id, venenatis dignissim urna. Duis sit amet eros a sem viverra mollis nec eu sem. Quisque rutporta sed diam id, venenatis dignissim urna. Duis sit amet eros a sem viver uisque rurum euismod fermentum.</p>
+                        <p>Our experienced team of insurance advisors are local agents who know the community and take pride in providing quality service at low rates to find the coverage which is right for you and your budget.</p>
                         <ul class="row">
                             <li class="col-sm-4">
-                                <i class="fa fa-life-ring"></i>
-                                <h3>24x7 Support</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-                            </li>
-                            <li class="col-sm-4">
                                 <i class="ti-marker-alt"></i>
-                                <h3>Easy Claim system</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                <h3>Step 1</h3>
+                                <p>Fill out our simple service request form.</p>
                             </li>
                             <li class="col-sm-4">
-                                <i class="ti-email"></i>
-                                <h3>Get Started with us</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                <i class="fa fa-phone"></i>
+                                <h3>Step 2</h3>
+                                <p>A representative will contact you at your doorstep to discuss your auto insurance coverage options and present you with lowest rate.</p>
+                            </li>
+                            <li class="col-sm-4">
+                                <i class="fa fa-check"></i>
+                                <h3>Step 3</h3>
+                                <p>Purchase your policy and print your insurance card. It is that simple!</p>
                             </li>
                         </ul>
                     </div>
@@ -67,7 +67,7 @@
                 <section class="col-sm-5 col-md-4 col-lg-4">
                     <div class="get-quote-form">
                         <h2>Get a free quote form</h2>
-                        <form id="get-quote">
+                        <form id="get-quote" action='/send-email' method='post'>
                             <div>
                                 <input type="text" name="name" placeholder="Your Name" />
                             </div>
@@ -75,19 +75,22 @@
                                 <input type="text" name="email" placeholder="Email" />
                             </div>
                             <div>
-                                <input type="text" name="ph-no" placeholder="Phone no" />
+                                <input type="text" name="phone" placeholder="Phone no" />
                             </div>
                             <div class="form-select">
                                 <span></span>
-                                <select>
-                                    <option>Product</option>
+                                <select name='policytype'>
+                                    <option value='health'>Health Insurance</option>
+                                    <option value='life'>Life Insurance</option>
+                                    <option value='vehicle'>Vehicle Insurance</option>
+                                    <option value='travel'>Travel Insurance</option>
                                 </select>
                             </div>
                             <div>
-                                <textarea rows="1" cols="1" placeholder="Message"></textarea>
+                                <textarea rows="1" cols="1" placeholder="Message" name='message'></textarea>
                             </div>
                             <div class="text-center">
-                                <input type="submit" class="btn-default" value="Get Free Quote" />
+                                <input type="submit" class="btn-default"/>
                             </div>
                         </form>
                     </div>
@@ -102,22 +105,23 @@
                         <ul class="resp-tabs-list hor_1 col-sm-3 col-md-3 col-lg-3">
                             <li><i class="ti-car"></i> Vehicle Insurance</li>
                             <li><i class="fa fa-plane"></i> Travel Insurance</li>
-                            <li><i class="ti-heart-broken"></i> Health Insurance</li>
+                            <li><i class="fa fa-plus-square"></i> Health Insurance</li>
+                            <li><i class="ti-heart-broken"></i> Life Insurance</li>
                         </ul>
                         <div class="col-sm-5 col-md-5 col-lg-5 resp-tabs-container hor_1">
                             <div>
                                 <div class="prod-tab-content">
                                     <h4>
-                                        <span class="prod-cion"><i class="ti-home"></i></span>
+                                        <span class="prod-cion"><i class="ti-car"></i></span>
                                         Vehicle Insurance
                                     </h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer</p>
-                                    <p>et placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. </p>
+                                    <p>Finding the cheapest policy is easy when you know what all of your options are. That is why we bring you multiple quotes with just a single form to make shopping for car insurance as easy as it should be.</p>
+                                    <p>We will even help you find hidden discounts and explore bundling options, so you can save even more. </p>
                                     <p class="tel">
-                                        <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
+                                        <%# <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span> %>
                                     </p>
                                     <p>
-                                        <a class="btn-default" href="product-houseinsurance.html">Get Free Quote</a>
+                                        <a class="btn-default" href="/contact">Get Free Quote</a>
                                     </p>
                                 </div>
                                 <img src="images/2.jpg" alt="" class="img-responsive" />
@@ -128,13 +132,14 @@
                                         <span class="prod-cion"><i class="fa fa-plane"></i></span>
                                         Travel Insurance
                                     </h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer</p>
-                                    <p>et placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. </p>
+                                    <p>Travel insurance policies are designed providing financial support in tragic event of loss of luggage, passport or any other vital belongings while travelling.</p>
+                                    <p>Feel safe during all of your travels and we will take care. </p>
                                     <p class="tel">
-                                        <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
+                                        <%# <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span> %>
                                     </p>
+                                    <br/>
                                     <p>
-                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                        <a class="btn-default" href="/contact">Get Free Quote</a>
                                     </p>
                                 </div>
                                 <img src="images/1.jpg" alt="" class="img-responsive" />
@@ -142,16 +147,37 @@
                             <div>
                                 <div class="prod-tab-content">
                                     <h4>
-                                        <span class="prod-cion"><i class="ti-heart-broken"></i></span>
+                                        <span class="prod-cion"><i class="fa fa-plus-square"></i></span>
                                         Health Insurance
                                     </h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer</p>
-                                    <p>et placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. </p>
+                                    <p>Our health insurance policy is a scheme which helps in providing our customer with financial cover under medical costs for an individual or your whole family</p>
+                                    <p>You don't want to have health insurance that leaves the family vulnerable, get a health insurance that can take care of you.</p>
                                     <p class="tel">
-                                        <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
+                                        <%# <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span> %>
                                     </p>
+                                    <br/>
                                     <p>
-                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                        <a class="btn-default" href="/contact">Get Free Quote</a>
+                                    </p>
+                                </div>
+                                <img src="images/3.jpg" alt="" class="img-responsive" />
+                            </div>
+                            <div>
+                                <div class="prod-tab-content">
+                                    <h4>
+                                        <span class="prod-cion"><i class="ti-heart-broken"></i></span>
+                                        Life Insurance
+                                    </h4>
+                                    <p>When the unforeseeable becomes reality, you want the coverage, because anything can happen</p>
+                                    <p class="tel">
+                                        <%# <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span> %>
+                                    </p>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <p>
+                                        <a class="btn-default" href="/contact">Get Free Quote</a>
                                     </p>
                                 </div>
                                 <img src="images/3.jpg" alt="" class="img-responsive" />
@@ -180,7 +206,7 @@
                         <h3>Get Started With us</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                     </div>
-                    <div class="col-sm-3 services-dtl">
+                    <%# <div class="col-sm-3 services-dtl">
                         <span class="fa fa-money"></span>
                         <h3>Easy Installments</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
@@ -194,25 +220,25 @@
                         <span class="fa fa-laptop"></span>
                         <h3>Online Account</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    </div>
+                    </div> %>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-lock"></span>
                         <h3>Strongly Secure</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                     </div>
-                    <div class="col-sm-3 services-dtl">
+                    <%# <div class="col-sm-3 services-dtl">
                         <span class="ti-book"></span>
                         <h3>Understandable Terms</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    </div>
+                    </div> %>
                 </div>
             </div>
         </section>
-        <section class="testimonials">
+        <%# <section class="testimonials">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
-                        <h2 class="text-center">Know what people says</h2>
+                        <h2 class="text-center">Know what people say</h2>
                         <div class="testimonial-tab">
                             <div class="testimonials-tab-list">
                                 <ul>
@@ -269,8 +295,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="recent-news">
+        </section> %>
+        <%# <section class="recent-news">
             <h2 class="text-center">Recent News</h2>
             <div class="container">
                 <div class="row">
@@ -320,7 +346,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> %>
         <section class="partners">
             <div class="container">
                 <div class="row">
@@ -334,51 +360,51 @@
                             <div class="partner-slider owl-carousel">
                                 <div>
                                     <div class="partner-logo">
-                                        <p><img src="images/partner-logo-01.jpg" alt="Partner" /></p>
+                                        <p><img src="images/partnerlogo-1.png" alt="Partner - Go Digit" /></p>
                                     </div>
-                                    <div class="partner-logo">
-                                        <p><img src="images/partner-logo-04.jpg" alt="Partner" /></p>
-                                    </div>
+                                    <%# <div class="partner-logo">
+                                        <p><img src="images/partner-logo-04.jpg" alt="Partner - Kotak Mahindra" /></p>
+                                    </div> %>
                                 </div>
                                 <div>
                                     <div class="partner-logo">
-                                        <p><img src="images/partner-logo-02.jpg" alt="Partner" /></p>
+                                        <p><img src="images/partnerlogo-2.png" alt="Partner" /></p>
                                     </div>
-                                    <div class="partner-logo">
+                                    <%# <div class="partner-logo">
                                         <p><img src="images/partner-logo-05.jpg" alt="Partner" /></p>
-                                    </div>
+                                    </div> %>
                                 </div>
                                 <div>
-                                    <div class="partner-logo">
+                                    <%# <div class="partner-logo">
                                         <p><img src="images/partner-logo-03.jpg" alt="Partner" /></p>
                                     </div>
                                     <div class="partner-logo">
                                         <p><img src="images/partner-logo-06.jpg" alt="Partner" /></p>
-                                    </div>
+                                    </div> %>
                                 </div>
                                 <div>
-                                    <div class="partner-logo">
+                                    <%# <div class="partner-logo">
                                         <p><img src="images/partner-logo-04.jpg" alt="Partner" /></p>
                                     </div>
                                     <div class="partner-logo">
                                         <p><img src="images/partner-logo-01.jpg" alt="Partner" /></p>
-                                    </div>
+                                    </div> %>
                                 </div>
                                 <div>
-                                    <div class="partner-logo">
+                                    <%# <div class="partner-logo">
                                         <p><img src="images/partner-logo-05.jpg" alt="Partner" /></p>
                                     </div>
                                     <div class="partner-logo">
                                         <p><img src="images/partner-logo-02.jpg" alt="Partner" /></p>
-                                    </div>
+                                    </div> %>
                                 </div>
                                 <div>
-                                    <div class="partner-logo">
+                                    <%# <div class="partner-logo">
                                         <p><img src="images/partner-logo-06.jpg" alt="Partner" /></p>
                                     </div>
                                     <div class="partner-logo">
                                         <p><img src="images/partner-logo-03.jpg" alt="Partner" /></p>
-                                    </div>
+                                    </div> %>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
