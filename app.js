@@ -160,13 +160,13 @@ app.post('/signup-afmarketing',(req,res)=>{
         <li>Name: ${req.body.name}</li>
         <li>Email: ${req.body.email}</li>
         <li>Phone: ${req.body.phone}</li>
-        <li>Code: ${couponcode}</li>
+        <li>Code: <b>${couponcode}</b></li>
       </ul>`;
   
   const userRecord = `
       <b>Tezz Policy Alert</b>
-      <p>Your referral code is ${couponcode}</p>
-      <p>Share this code on your social media and for every referral you will recieve 10% of the policy price.</p>
+      <p>Your referral code is <b>${couponcode}</b></p>
+      <p>Share this code on your social media and for every referral you will recieve 10% of the policy price, along with upto 25% off for anyone using this code.</p>
       <p>After successful referral you will be contaced by our support on ${req.body.email} and/or +91 ${req.body.phone}</p>
       <b>This is an automated email, please do not reply to this.</b>`;
 
